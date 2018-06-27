@@ -35,6 +35,7 @@ This will give portable, immutable and reproducable mechanism to build templates
 
 List of available packages inside the container:
 
+- **TODO**
 - rpm-build
 - yum-utils
 - createrepo
@@ -57,7 +58,7 @@ Let's assume we want to build templates based on Packer. We pull that image firs
 
     docker pull khos2ow/cloudstack-systemvm-builder:packer
 
-You can replace `packer` tag by `veewee` if you are building templates for CloudStack before 4.11.x.
+You need to replace `packer` tag by `veewee` if you are building templates for CloudStack before `4.11.x.y`.
 
 ### Build local repository
 
@@ -85,7 +86,7 @@ Or if your local cloudstack folder has other name, you need to map it to `/mnt/b
         -v /tmp/cloudstack-custom-name:/mnt/build/cloudstack \
         khos2ow/cloudstack-systemvm-builder:packer TODO [ARGS...]
 
-After the build has finished the *various formats* packages are available in */tmp/cloudstack/tools/appliance/dist* on the host system.
+After the build has finished the *various formats* templates are available in */tmp/cloudstack/tools/appliance/dist* on the host system.
 
 ### Build remote repository
 
@@ -110,7 +111,7 @@ Note that any valid git Refspec is acceptable, such as:
 - `refs/merge-requests/<NUMBER>/head` to build specified GitLab Merge Request
 - `refs/tags/<NAME>` to build specified Tag
 
-After the build has finished the *various formats* packages are available in */tmp/cloudstack/tools/appliance/dist* on the host system.
+After the build has finished the *various formats* templates are available in */tmp/cloudstack/tools/appliance/dist* on the host system.
 
 ## Building tips
 
